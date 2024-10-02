@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        table, th, td {
+          border:1px solid black;
+        }
+        </style>
+</head>
+<body>
+
+    <a href="api/car/reg">RESGSTER</a>
+    <table style="width:50%">
+        <tr><th>ID</th><th>MODEL</th><th>YEAR</th></tr>
+    <% car.forEach((el)=>{%>
+        <tr><th><%= el.id%>,</th> <th> <%= el.modul%>,</th> <th><%= el.year%></th>     </tr>
+   <% })%>
+    </table>
+
+    <br>
+    
+        <form action="api/car/post" method="post">
+            <label for="modul">module</label>
+            <input type="text"  name="modul"><br><br>
+    
+            <label for="year">Last name:</label>
+            <input type="text"  name="year"><br><br>
+            
+           <button type="submit">REGISTER</button>
+          </form>
+</body>
+</html>
